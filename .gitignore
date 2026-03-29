@@ -1,0 +1,70 @@
+## Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+[Bb]in/
+[Oo]bj/
+
+## NuGet packages
+packages/
+project.lock.json
+project.fragment.lock.json
+*.nupkg
+
+## Visual Studio & VS Code
+.vscode/
+.vs/
+*.user
+*.suo
+*.sln.docstates
+
+## Linux temporary files
+*~
+*.tmp
+*.bak
+
+## macOS (if shared with macOS users)
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+## DotNet
+*.dbmdl
+*.dbproj.schemaview
+*.jfm
+
+## Test results
+[Tt]est[Rr]esults/
+TestResult.xml
+*.VisualState.xml
+
+## Coverage
+coverage.xml
+coverage.json
+.nyc_output/
+
+## Local configuration
+*.local.json
+appsettings.Development.json
+appsettings.Local.json
+
+## Environment
+.env
+*.env
+
+## Docker
+docker-compose.override.yml
+
+## Misc
+.idea/
+*.iml
+*.iws
+_ReSharper*/
+*.DotSettings.user
+*.dotCover
+Thumbs.db
+Desktop.ini
