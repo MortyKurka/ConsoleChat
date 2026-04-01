@@ -33,7 +33,7 @@ jobs:
       
       - name: Build documentation
         run: |
-          cd docfx
+          cd docs
           docfx docfx.json
       
       - name: Upload artifact
