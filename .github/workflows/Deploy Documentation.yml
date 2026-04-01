@@ -1,37 +1,46 @@
 name: Deploy Documentation
 
 on:
-  pull_request: 
+  pull_request:
     branches: [main]
     types: [closed]
+  push:
+    branches: [main]
 
-permissions: 
-  contents: write
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request' || github.event.pull_request.merged == true
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Setup .NET
-        uses: action/setup-dotnet@v4
         with:
-          dotnet-version: 10.x
-
+          fetch-depth: 0
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.x'
+      
       - name: Install DocFX
-        run: dotnet tool update -g docfx
-
+        run: dotnet tool install -g docfx --version 2.*
+      
       - name: Build documentation
-        run: | 
+        run: |
           cd .docfx
           docfx docfx.json
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
-          publish_branch: gh-pages
+          path: ./_site
+      
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
   
