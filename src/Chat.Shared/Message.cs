@@ -1,11 +1,10 @@
+namespace Chat.Shared;
 /// <summary>
 /// record для хранения сообщений
 /// </summary>
+/// <param name="Content">The message content.</param>
 public record Message
 (
-    /// <summary>
-    /// Message content
-    /// <summary>
     string? Content
 )
 {

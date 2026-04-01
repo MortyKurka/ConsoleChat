@@ -1,7 +1,13 @@
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using Chat.Shared;
 
+namespace Chat.TcpClient;
+
+/// <summary>
+/// TCP client implementation for chat communication.
+/// </summary>
 public class TcpChatClient : IClient
 {
     /// <summary>
@@ -19,7 +25,7 @@ public class TcpChatClient : IClient
 
     private StreamWriter? _writer;
     private StreamReader? _reader;
-    private TcpClient? _client;
+    private System.Net.Sockets.TcpClient? _client;
     private bool _isOnline = false;
     public bool IsOnline => _isOnline;
 
@@ -32,7 +38,7 @@ public class TcpChatClient : IClient
         if (IsOnline) return;
         try
         {
-            _client = new TcpClient();
+            _client = new System.Net.Sockets.TcpClient();
             using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(10));
             await _client.ConnectAsync(ip, port).WaitAsync(cts.Token);
             var stream = _client.GetStream();

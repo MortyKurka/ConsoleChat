@@ -1,3 +1,4 @@
+namespace Chat.Shared;
 /// <summary>
 /// An interface for representing an entity that can communicate
 /// </summary>

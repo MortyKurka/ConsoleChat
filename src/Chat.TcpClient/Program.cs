@@ -1,4 +1,5 @@
 using System.Net;
+using Chat.TcpClient;
 
 Console.WriteLine("Приветствую, это клиент консольного чата\nВведите Ip и Port к которому хотите подключиться");
 var client = new TcpChatClient();

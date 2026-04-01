@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using Chat.Server;
 
 Console.WriteLine("Приветствую, это сервер консольного чата\nВведите Port на котором будет работать сервер");
 var server = new TcpChatServer();

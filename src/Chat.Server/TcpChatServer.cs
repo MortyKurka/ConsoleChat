@@ -1,7 +1,14 @@
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using Chat.Shared;
 
+namespace Chat.Server;
+
+
+/// <summary>
+/// TCP chat server that handles client connections and message broadcasting.
+/// </summary>
 public class TcpChatServer
 {
     private static int _count = 0;

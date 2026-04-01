@@ -1,4 +1,7 @@
 using System.Net;
+using Chat.Shared;
+
+namespace Chat.TcpClient;
 
 public interface IClient : ICommunicator
 {
