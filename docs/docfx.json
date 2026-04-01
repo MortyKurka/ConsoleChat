@@ -17,7 +17,7 @@
       ],
       "dest": "../api",
       "properties": {
-        "TargetFramework": "net10.0"
+        "TargetFramework": "net8.0"
       },
       "shouldSkipMarkup": false
     }
@@ -32,7 +32,6 @@
         ],
         "exclude": [
           "_site/**",
-          "api/**",
           "obj/**",
           "images/**"
         ]
