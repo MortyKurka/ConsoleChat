@@ -12,6 +12,7 @@ packages/
 project.lock.json
 project.fragment.lock.json
 *.nupkg
+publish/
 
 ## Visual Studio & VS Code
 .vscode/
@@ -68,3 +69,6 @@ _ReSharper*/
 *.dotCover
 Thumbs.db
 Desktop.ini
+_site/
+api/
+

@@ -1,0 +1,71 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/docfx/main/schemas/docfx.schema.json",
+  
+  "metadata": [
+    {
+      "src": [
+        {
+          "src": "../src",
+          "files": [
+            "**/*.csproj"
+          ],
+          "exclude": [
+            "**/bin/**",
+            "**/obj/**"
+          ]
+        }
+      ],
+      "dest": "api",
+      "properties": {
+        "TargetFramework": "net10.0"
+      },
+      "shouldSkipMarkup": false
+    }
+  ],
+  
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "exclude": [
+          "_site/**",
+          "api/**",
+          "obj/**",
+          "images/**"
+        ]
+      },
+      {
+        "files": [
+          "toc.yml"
+        ]
+      }
+    ],
+    
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ]
+      }
+    ],
+    
+    "output": "_site",
+    
+    "template": [
+      "default"
+    ],
+    
+    "globalMetadata": {
+      "_appName": "Console.Chat",
+      "_appTitle": "Console.Chat Documentation",
+      "_enableSearch": true
+    },
+    
+    "pdf": {
+      "enabled": false
+    }
+  }
+}
